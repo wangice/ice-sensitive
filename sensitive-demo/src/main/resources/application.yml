@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: framework-web-explame
+
+server:
+  port: 8079
+
+
+sensitive:
+  scan-package: com.ice.sensitive
+  fields:
+    mobilePhone: phone
+    userName: user
+    identityCard: identity
+  expands:
+    - field: city
+      regExp: (.{3}).*(.{3})
+      regStr: $1*****$2
+
+
